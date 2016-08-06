@@ -9,16 +9,16 @@ def deleteFile(filename):
 
 #timestamp dateien ueberwachen
 def watchFolder():
-	appendLog('watchFolder checking folder ' + str(FILE_FOLDER_WATCH));
-	listfiles = [];
- 	for name in os.listdir(FILE_FOLDER_WATCH):
+  appendLog('watchFolder checking folder ' + str(FILE_FOLDER_WATCH));
+  listfiles = [];
+  for name in os.listdir(FILE_FOLDER_WATCH):
     if os.path.isfile(os.path.join(FILE_FOLDER_WATCH, name)):
-		  listfiles.append(os.path.join(FILE_FOLDER_WATCH, name));		
+      listfiles.append(os.path.join(FILE_FOLDER_WATCH, name));
 
-	appendLog('watchFolder size=' + str(len(listfiles)));
-	if len(listfiles) > 0:
-		for f in listfiles:
-			parseFile(f);
+  appendLog('watchFolder size=' + str(len(listfiles)));
+  if len(listfiles) > 0:
+    for f in listfiles:
+      parseFile(f);
 
 # auf START und ENDe pruefen
 # alles in eine Liste schreiben
