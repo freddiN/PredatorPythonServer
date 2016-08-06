@@ -4,7 +4,6 @@ from config import *
 from funcs_GPIO import *
 import time
 
-
 #main: while schlife, thread sleep 100ms
 startLog();
 GPIOSetup();
