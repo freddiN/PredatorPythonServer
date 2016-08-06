@@ -26,24 +26,21 @@ def parseFile(filename):
 # auf START und ENDe pruefen
 # alles in eine Liste schreiben
 # wenn START und ENDE da sind: alles an einen handler geben
-	appendLog("parseFile von " + str(filename));
+	appendLog('parseFile von ' + str(filename));
 	if not filename.endswith('.action'):
 		appendLog('parseFile ignored ' + filename + ' : wrong filetype');
 		return;
-
-        listAction = [];
-        with open(filename, 'r') as fp:
-        	for line in fp:
+    
+  listAction = [];
+  with open(filename, 'r') as fp:
+    for line in fp:
 			if len(line) > 0 and not line.startswith('#'):
-                		appendLog('line:>' + line.strip() + '<');
+        appendLog('line:>' + line.strip() + '<');
 				listAction.append(line.strip());
        
         if len(listAction) > 0 and listAction.pop(0) == "START" and listAction.pop() == "END":
-                appendLog("Start and END found");
-                deleteFile(filename);
-                handleAction(listAction);
+          appendLog("Start and END found");
+          deleteFile(filename);
+          handleAction(listAction);
         else:
-                appendLog("invalid file");
-
-
-
+          appendLog("invalid file");

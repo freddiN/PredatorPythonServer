@@ -42,9 +42,9 @@ def handleLED(led):
 	if nLED == '1':
 		strPort = GPIO_LED_1;
 	elif nLED == '2':
-                strPort = GPIO_LED_2;
+    strPort = GPIO_LED_2;
 	elif nLED == '3':
-                strPort = GPIO_LED_3;
+    strPort = GPIO_LED_3;
 
 	if actionLED == 'ON':
 		nAction = GPIO.HIGH;
@@ -52,7 +52,6 @@ def handleLED(led):
 		nAction = GPIO.LOW;
 
 	GPIO.output(strPort, nAction);
-
 
 def handleServo(servo):
 	appendLog('handleServo ' + servo);
