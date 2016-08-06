@@ -31,27 +31,27 @@ def handleSleep(action):
 	time.sleep(int(action));
 
 def handleLED(led):
-	appendLog('handleLED >' + led + '<');
-	nLED = led[0:1];
-        actionLED = led[2:];
-	appendLog('handleLED nr=' + nLED + ' action=' + actionLED);
-	
-	strPort = '';
-	nAction = 0;
+  appendLog('handleLED >' + led + '<');
+  nLED = led[0:1];
+  actionLED = led[2:];
+  appendLog('handleLED nr=' + nLED + ' action=' + actionLED);
 
-	if nLED == '1':
-		strPort = GPIO_LED_1;
-	elif nLED == '2':
+  strPort = '';
+  nAction = 0;
+
+  if nLED == '1':
+    strPort = GPIO_LED_1;
+  elif nLED == '2':
     strPort = GPIO_LED_2;
-	elif nLED == '3':
+  elif nLED == '3':
     strPort = GPIO_LED_3;
 
-	if actionLED == 'ON':
-		nAction = GPIO.HIGH;
-	elif actionLED == 'OFF':
-		nAction = GPIO.LOW;
+  if actionLED == 'ON':
+    nAction = GPIO.HIGH;
+  elif actionLED == 'OFF':
+    nAction = GPIO.LOW;
 
-	GPIO.output(strPort, nAction);
+  GPIO.output(strPort, nAction);
 
 def handleServo(servo):
 	appendLog('handleServo ' + servo);
