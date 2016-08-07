@@ -25,6 +25,9 @@ Die .action Dateien gelangen via Bluetooth-OBEX auf den C.H.I.P., siehe startObe
 
 Konfiguration und Mapping von LED Nr / Servo auf GPIO Port in config.py
 
+Start mit `python main.py`
+
+
 Benötigt folgende Abhängigkeiten:
 
 CHIP_IO Python Library: https://github.com/xtacocorex/CHIP_IO
